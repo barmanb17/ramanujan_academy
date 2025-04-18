@@ -59,7 +59,7 @@ export default function Header() {
             <span className="text-xl font-bold text-primary-700 hidden lg:block">
               Ramanujan Academy
             </span>
-            <span className="text-[0.7rem] font-light text-gray-500 ">
+            <span className="text-[0.7rem] font-light text-gray-600 ">
               North Barpeta Road, Assam 781315
             </span>
             </div>

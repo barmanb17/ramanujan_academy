@@ -55,7 +55,7 @@ export default function Header() {
                 className="object-contain"
               />
             </div>
-            <span className="text-xl font-bold text-primary-600 hidden lg:block">
+            <span className="text-xl font-bold text-primary-700 hidden lg:block">
               Ramanujan Academy
             </span>
           </Link>

@@ -13,11 +13,11 @@ import CtaSection from "@/components/landing/cta-section"
 import ContactSection from "@/components/landing/contact-section"
 
 export const metadata: Metadata = {
-  title: "Reamanujan Academy - Excellence in Education",
+  title: "Ramanujan Academy - Excellence in Education",
   description: "Empowering students to achieve academic excellence through quality education and personalized guidance",
   keywords: "education, academy, coaching, JEE, NEET, board exams, Barpeta Road, Assam",
   openGraph: {
-    title: "Reamanujan Academy - Excellence in Education",
+    title: "Ramanujan Academy - Excellence in Education",
     description:
       "Empowering students to achieve academic excellence through quality education and personalized guidance",
     images: [

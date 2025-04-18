@@ -61,7 +61,7 @@ export default function HeroSection() {
             </motion.p>
           </motion.div>
           <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 min-[400px]:gap-6">
-            <Button asChild size="lg" className="bg-primary-500 hover:bg-primary-600">
+            <Button asChild size="lg" className="bg-primary-600 hover:bg-primary-700">
               <Link href="/courses">
                 Explore Courses
                 <ArrowRight className="ml-2 h-4 w-4" />

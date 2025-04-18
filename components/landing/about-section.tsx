@@ -98,13 +98,15 @@ export default function AboutSection() {
                     key={index}
                     className="absolute inset-0 h-full w-full transition-opacity duration-500 ease-in-out"
                     style={{ opacity: currentSlide === index ? 1 : 0 }}
+                    
                   >
+                    
                     <Image
                       src={src || "/a1.jpg"}
                       alt={`Campus image ${index + 1}`}
                       fill
                       className="object-cover"
-                      priority={index === 0}
+                      priority={index === 1}
                     />
                   </div>
                 ))}

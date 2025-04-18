@@ -33,41 +33,52 @@ export default function GalleryPreview() {
 
   const images = [
     {
-      src: "/a1.jpg",
+      src: "/placeholder.svg?height=400&width=600",
       alt: "Campus Building",
       category: "Campus",
     },
     {
-      src: "/a1.jpg",
+      src: "/placeholder.svg?height=400&width=600",
       alt: "Science Lab",
       category: "Facilities",
     },
     {
-      src: "/a1.jpg",
+      src: "/placeholder.svg?height=400&width=600",
       alt: "Classroom",
       category: "Academics",
     },
     {
-      src: "/a1.jpg",
+      src: "/placeholder.svg?height=400&width=600",
       alt: "Sports Event",
       category: "Events",
     },
     {
-      src: "/a1.jpg",
+      src: "/placeholder.svg?height=400&width=600",
       alt: "Library",
       category: "Facilities",
     },
     {
-      src: "/a1.jpg",
+      src: "/placeholder.svg?height=400&width=600",
       alt: "Cultural Program",
       category: "Events",
     },
   ]
 
-  const visibleImages = images.slice(currentIndex, currentIndex + 3)
+  // Adjust the number of visible images based on screen size
+  const getVisibleCount = () => {
+    if (typeof window !== "undefined") {
+      if (window.innerWidth < 640) return 1 // Mobile
+      if (window.innerWidth < 1024) return 2 // Tablet
+      return 3 // Desktop
+    }
+    return 3 // Default for SSR
+  }
+
+  const visibleCount = typeof window !== "undefined" ? getVisibleCount() : 3
+  const visibleImages = images.slice(currentIndex, currentIndex + visibleCount)
 
   const nextSlide = () => {
-    if (currentIndex < images.length - 3) {
+    if (currentIndex < images.length - visibleCount) {
       setCurrentIndex(currentIndex + 1)
     } else {
       setCurrentIndex(0)
@@ -78,7 +89,7 @@ export default function GalleryPreview() {
     if (currentIndex > 0) {
       setCurrentIndex(currentIndex - 1)
     } else {
-      setCurrentIndex(images.length - 3)
+      setCurrentIndex(Math.max(0, images.length - visibleCount))
     }
   }
 
@@ -109,7 +120,7 @@ export default function GalleryPreview() {
         </motion.div>
 
         <motion.div
-          className="mx-auto mt-12 max-w-6xl"
+          className="mx-auto mt-12 w-full max-w-7xl px-4"
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
@@ -126,7 +137,7 @@ export default function GalleryPreview() {
                 <ChevronLeft className="h-6 w-6" />
               </Button>
 
-              <div className="mx-12 flex w-full gap-4 overflow-hidden">
+              <div className="mx-auto flex w-full gap-4 overflow-hidden px-10">
                 {visibleImages.map((image, index) => (
                   <motion.div
                     key={`${image.alt}-${currentIndex + index}`}
@@ -134,7 +145,7 @@ export default function GalleryPreview() {
                     variants={itemVariants}
                     custom={index}
                   >
-                    <div className="group relative aspect-video overflow-hidden rounded-lg h-48 w-80 shadow-md">
+                    <div className="group relative aspect-video overflow-hidden rounded-lg shadow-md">
                       <Image
                         src={image.src || "/placeholder.svg"}
                         alt={image.alt}

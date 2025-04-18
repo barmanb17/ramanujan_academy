@@ -27,7 +27,7 @@ export default function TestimonialSection() {
       role: "JEE Advanced 2023",
       image: "/placeholder.svg?height=100&width=100",
       content:
-        "The faculty at Reamanujan Academy provided exceptional guidance that helped me crack JEE Advanced with a top rank. Their personalized approach to teaching complex concepts made all the difference.",
+        "The faculty at Ramanujan Academy provided exceptional guidance that helped me crack JEE Advanced with a top rank. Their personalized approach to teaching complex concepts made all the difference.",
       achievement: "AIR 342",
     },
     {
@@ -36,7 +36,7 @@ export default function TestimonialSection() {
       role: "NEET 2023",
       image: "/placeholder.svg?height=100&width=100",
       content:
-        "I joined Reamanujan Academy for NEET preparation, and it was the best decision. The structured curriculum and regular mock tests prepared me thoroughly for the actual exam.",
+        "I joined Ramanujan Academy for NEET preparation, and it was the best decision. The structured curriculum and regular mock tests prepared me thoroughly for the actual exam.",
       achievement: "AIR 512",
     },
     {
@@ -45,7 +45,7 @@ export default function TestimonialSection() {
       role: "12th Board Topper",
       image: "/placeholder.svg?height=100&width=100",
       content:
-        "The teachers at Reamanujan Academy are not just educators but mentors who guided me throughout my board exam preparation. Their support helped me secure 98% in my 12th boards.",
+        "The teachers at Ramanujan Academy are not just educators but mentors who guided me throughout my board exam preparation. Their support helped me secure 98% in my 12th boards.",
       achievement: "98% in CBSE",
     },
   ]
@@ -119,7 +119,7 @@ export default function TestimonialSection() {
                   <Card className="overflow-hidden border-none shadow-lg">
                     <CardContent className="p-8">
                       <div className="mb-6 flex justify-center">
-                        <Quote className="h-12 w-12 text-primary-500" />
+                        <Quote className="h-12 w-12 text-primary-700" />
                       </div>
                       <blockquote className="mb-6 text-center text-lg text-gray-700">
                         "{testimonial.content}"

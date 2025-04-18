@@ -30,7 +30,7 @@ export default function CtaSection() {
   }
 
   return (
-    <section className="bg-primary-600 py-16 md:py-20">
+    <section className="bg-primary-800 py-16 md:py-20 w-full">
       <div className="container-wrapper" ref={ref}>
         <motion.div
           className="flex flex-col items-center justify-center space-y-6 text-center"
@@ -45,7 +45,7 @@ export default function CtaSection() {
             Ready to Begin Your Academic Journey?
           </motion.h2>
           <motion.p variants={itemVariants} className="max-w-[700px] text-primary-100 md:text-xl/relaxed">
-            Join Reamanujan Academy and take the first step towards academic excellence and a bright future
+            Join Ramanujan Academy and take the first step towards academic excellence and a bright future
           </motion.p>
           <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4">
             <Button asChild size="lg" className="bg-white text-primary-600 hover:bg-gray-100">
@@ -54,7 +54,7 @@ export default function CtaSection() {
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
-            <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-primary-700">
+            <Button asChild size="lg" variant="outline" className="border-white text-black hover:bg-primary-800">
               <Link href="/contact">
                 Schedule a Visit
                 <ArrowRight className="ml-2 h-4 w-4" />

@@ -30,7 +30,7 @@ export default function AboutPage() {
             <div>
               <h2 className="text-3xl font-bold tracking-tight mb-6 text-primary-700">Our Mission</h2>
               <p className="text-gray-600 mb-4">
-                At Reamanujan Academy, our mission is to provide quality education that empowers students to achieve
+                At Ramanujan Academy, our mission is to provide quality education that empowers students to achieve
                 their academic goals and build a strong foundation for their future. We strive to create a nurturing
                 environment where students can develop their intellectual capabilities, critical thinking skills, and
                 personal growth through dedicated mentorship and comprehensive academic programs.
@@ -58,7 +58,7 @@ export default function AboutPage() {
           <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
             <h2 className="text-3xl font-bold tracking-tight text-primary-700">Our History</h2>
             <p className="max-w-[700px] text-gray-600">
-              The journey of Reamanujan Academy from its humble beginnings to becoming a premier educational institution
+              The journey of Ramanujan Academy from its humble beginnings to becoming a premier educational institution
             </p>
           </div>
 
@@ -72,7 +72,7 @@ export default function AboutPage() {
                 </div>
                 <h3 className="text-xl font-bold mb-2 text-center">Foundation</h3>
                 <p className="text-gray-600">
-                  Reamanujan Academy was founded in 2005 by a group of dedicated educators with a vision to transform
+                  Ramanujan Academy was founded in 2005 by a group of dedicated educators with a vision to transform
                   education in the region. Named after the mathematical genius Srinivasa Ramanujan, the academy started
                   with just 50 students and 5 teachers.
                 </p>
@@ -104,7 +104,7 @@ export default function AboutPage() {
                 </div>
                 <h3 className="text-xl font-bold mb-2 text-center">Present Day</h3>
                 <p className="text-gray-600">
-                  Today, Reamanujan Academy stands as a premier educational institution with state-of-the-art
+                  Today, Ramanujan Academy stands as a premier educational institution with state-of-the-art
                   facilities, a team of expert faculty members, and a comprehensive curriculum that prepares students
                   for academic success and beyond.
                 </p>
@@ -169,21 +169,21 @@ export default function AboutPage() {
           <div className="grid gap-8 md:grid-cols-3">
             {[
               {
-                name: "Dr. Amit Sharma",
+                name: "Khairul Islam",
                 position: "Principal",
-                image: "/placeholder.svg?height=300&width=300",
-                bio: "Dr. Sharma has over 20 years of experience in education and holds a Ph.D. in Educational Leadership.",
+                image: "/f1.jpg",
+                bio: "Prof. Khairul has over 23 years of experience in education and holds a Ph.D. in Educational Leadership.",
               },
               {
-                name: "Prof. Meena Gupta",
-                position: "Academic Director",
-                image: "/placeholder.svg?height=300&width=300",
-                bio: "Prof. Gupta oversees the academic programs and curriculum development at Reamanujan Academy.",
+                name: "Shahruk Islam",
+                position: "Faculty of Chemistry",
+                image: "/f2.jpg",
+                bio: "Prof. Shahruk oversees the academic programs and curriculum development at Reamanujan Academy.",
               },
               {
                 name: "Mr. Rajiv Patel",
                 position: "Administrative Head",
-                image: "/placeholder.svg?height=300&width=300",
+                image: "/f3.jpg",
                 bio: "Mr. Patel manages the administrative operations and ensures smooth functioning of the academy.",
               },
             ].map((member, index) => (

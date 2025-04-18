@@ -13,9 +13,9 @@ export default function AboutSection() {
   const isInView = useInView(ref, { once: true, amount: 0.3 })
 
   const images = [
-    "/h1.jpg",
-    "/placeholder.svg?height=400&width=600",
-    "/placeholder.svg?height=400&width=600",
+    "/a1.jpg",
+    "/a1.jpg",
+    "/a1.jpg",
   ]
 
   const nextSlide = () => {
@@ -100,7 +100,7 @@ export default function AboutSection() {
                     style={{ opacity: currentSlide === index ? 1 : 0 }}
                   >
                     <Image
-                      src={src || "/placeholder.svg"}
+                      src={src || "/a1.jpg"}
                       alt={`Campus image ${index + 1}`}
                       fill
                       className="object-cover"

@@ -33,32 +33,32 @@ export default function GalleryPreview() {
 
   const images = [
     {
-      src: "/placeholder.svg?height=400&width=600",
+      src: "/a1.jpg",
       alt: "Campus Building",
       category: "Campus",
     },
     {
-      src: "/placeholder.svg?height=400&width=600",
+      src: "/a1.jpg",
       alt: "Science Lab",
       category: "Facilities",
     },
     {
-      src: "/placeholder.svg?height=400&width=600",
+      src: "/a1.jpg",
       alt: "Classroom",
       category: "Academics",
     },
     {
-      src: "/placeholder.svg?height=400&width=600",
+      src: "/a1.jpg",
       alt: "Sports Event",
       category: "Events",
     },
     {
-      src: "/placeholder.svg?height=400&width=600",
+      src: "/a1.jpg",
       alt: "Library",
       category: "Facilities",
     },
     {
-      src: "/placeholder.svg?height=400&width=600",
+      src: "/a1.jpg",
       alt: "Cultural Program",
       category: "Events",
     },
@@ -134,7 +134,7 @@ export default function GalleryPreview() {
                     variants={itemVariants}
                     custom={index}
                   >
-                    <div className="group relative aspect-video overflow-hidden rounded-lg shadow-md">
+                    <div className="group relative aspect-video overflow-hidden rounded-lg h-48 w-80 shadow-md">
                       <Image
                         src={image.src || "/placeholder.svg"}
                         alt={image.alt}

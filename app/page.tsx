@@ -22,10 +22,10 @@ export const metadata: Metadata = {
       "Empowering students to achieve academic excellence through quality education and personalized guidance",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/a1.jpg",
         width: 1200,
         height: 630,
-        alt: "Reamanujan Academy",
+        alt: "Ramanujan Academy",
       },
     ],
   },

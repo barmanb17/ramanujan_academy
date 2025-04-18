@@ -5,20 +5,20 @@ import { Button } from "@/components/ui/button"
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-primary-600 text-white">
+    <footer className="w-full bg-primary-800 text-white">
       <div className="container-wrapper py-12">
         <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-4">
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
               <div className="relative h-10 w-10 bg-white rounded-full p-1">
                 <Image
-                  src="/placeholder.svg?height=40&width=40"
+                  src="/rlogo.jpg"
                   alt="Reamanujan Academy Logo"
                   fill
                   className="object-contain"
-                />
+                />a
               </div>
-              <span className="text-xl font-bold text-white">Reamanujan Academy</span>
+              <span className="text-xl font-bold text-white">Ramanujan Academy</span>
             </div>
             <p className="text-sm text-gray-200">
               Empowering students to achieve academic excellence through quality education and personalized guidance.
@@ -97,7 +97,7 @@ export default function Footer() {
             <ul className="space-y-4 text-sm">
               <li className="flex items-start space-x-2">
                 <Mail className="h-5 w-5 text-secondary-500 shrink-0" />
-                <span className="text-gray-200">info@reamanujanacademy.com</span>
+                <span className="text-gray-200">info@ramanujanacademy.com</span>
               </li>
               <li className="flex items-start space-x-2">
                 <Phone className="h-5 w-5 text-secondary-500 shrink-0" />
@@ -105,7 +105,7 @@ export default function Footer() {
               </li>
               <li className="flex items-start space-x-2">
                 <MapPin className="h-5 w-5 text-secondary-500 shrink-0" />
-                <span className="text-gray-200">Reamanujan Academy, Main Road, Barpeta Road, Assam, India</span>
+                <span className="text-gray-200">Ramanujan Academy, Main Road, Barpeta Road, Assam, India</span>
               </li>
             </ul>
             <div className="mt-4">
@@ -116,7 +116,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="mt-12 border-t border-gray-700 pt-8 text-center text-sm text-gray-300">
-          <p>© {new Date().getFullYear()} Reamanujan Academy. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Ramanujan Academy. All rights reserved.</p>
         </div>
       </div>
     </footer>

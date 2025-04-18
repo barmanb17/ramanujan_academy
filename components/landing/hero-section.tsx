@@ -41,7 +41,7 @@ export default function HeroSection() {
       {/* Optional dark overlay for readability */}
       <div className="absolute inset-0 z-0 bg-black/10" />
 
-      <div className="container-wrapper relative z-10 mt-10 sm:mt-20">
+      <div className="container-wrapper relative z-10 mt-10 sm:mt-20 sm:flex sm:justify-center sm:items-center">
         <motion.div
           className="flex flex-col items-center justify-start sm:justify-center space-y-6 text-center"
           variants={containerVariants}

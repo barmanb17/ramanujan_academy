@@ -50,7 +50,7 @@ export default function HeroSection() {
           animate="visible"
         >
           <motion.div variants={itemVariants} className="space-y-2 mt-10 gap-5">
-            <h1 className="text-4xl font-bold mb-10 tracking-tighter text-white sm:text-6xl md:text-6xl lg:text-7xl/none">
+            <h1 className="text-4xl font-bold mb-10 tracking-tighter text-white sm:text-6xl  md:text-6xl lg:text-7xl/none">
               Welcome to <span className="text-gradient">Ramanujan Academy</span>
             </h1>
             <motion.p

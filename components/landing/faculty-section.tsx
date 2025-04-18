@@ -95,7 +95,7 @@ export default function FacultySection() {
   }
 
   return (
-    <section id="faculty" className="section-padding bg-gray-50">
+    <section id="faculty" className="section-padding px-10 bg-gray-50">
       <div className="container-wrapper" ref={ref}>
         <motion.div
           className="flex flex-col items-center justify-center space-y-4 text-center"

@@ -52,7 +52,7 @@ export default function TestimonialSection() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentTestimonial((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1))
+      setCurrentTestimonial((prev) => (prev + 1) % testimonials.length)
     }, 5000)
 
     return () => clearInterval(interval)
@@ -62,9 +62,7 @@ export default function TestimonialSection() {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
+      transition: { staggerChildren: 0.1 },
     },
   }
 
@@ -78,8 +76,9 @@ export default function TestimonialSection() {
   }
 
   return (
-    <section id="testimonials" className="section-padding overflow-hidden bg-white">
-      <div className="container-wrapper max-w-7xl overflow-hidden" ref={ref}>
+    <section id="testimonials" className="overflow-hidden bg-white py-16">
+      <div ref={ref} className="mx-auto w-full max-w-7xl px-4 sm:px-4 lg:px-8">
+        {/* Heading */}
         <motion.div
           className="flex flex-col items-center justify-center space-y-4 text-center"
           variants={containerVariants}
@@ -97,37 +96,45 @@ export default function TestimonialSection() {
           </motion.h2>
           <motion.p
             variants={itemVariants}
-            className="max-w-[700px] text-gray-600 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed"
+            className="max-w-[400px] text-gray-600 sm:px-4 md:text-xl/relaxed"
           >
             Hear from our students who achieved their academic goals with us
           </motion.p>
         </motion.div>
 
+        {/* Slider */}
         <motion.div
-          className="mx-auto mt-12 max-w-4xl"
+          className="mt-12 w-full overflow-hidden"
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
         >
-          <div className="relative overflow-hidden">
+          <div className="relative w-full overflow-hidden">
             <div
-              className="flex transition-transform duration-500 ease-in-out"
-              style={{ transform: `translateX(-${currentTestimonial * 100}%)` }}
+              className="flex w-full transition-transform duration-500 ease-in-out"
+              style={{
+                transform: `translateX(-${currentTestimonial * 100}%)`,
+                width: `${testimonials.length * 100}%`,
+              }}
             >
               {testimonials.map((testimonial) => (
-                <div key={testimonial.id} className="w-full flex-shrink-0 px-4">
-                  <Card className="overflow-hidden border-none shadow-lg">
-                    <CardContent className="p-8">
+                <div
+                  key={testimonial.id}
+                  className="w-full flex-shrink-0 px-2 sm:px-4"
+                  style={{ width: `${100 / testimonials.length}%` }}
+                >
+                  <Card className="h-full overflow-hidden border-none shadow-lg">
+                    <CardContent className="p-6 sm:p-8">
                       <div className="mb-6 flex justify-center">
                         <Quote className="h-12 w-12 text-primary-700" />
                       </div>
-                      <blockquote className="mb-6 text-center text-lg text-gray-700">
+                      <blockquote className="mb-6 text-center text-gray-700 text-sm sm:text-base lg:text-lg">
                         "{testimonial.content}"
                       </blockquote>
                       <div className="flex flex-col items-center justify-center">
                         <div className="relative h-16 w-16 overflow-hidden rounded-full">
                           <Image
-                            src={testimonial.image || "/placeholder.svg"}
+                            src={testimonial.image}
                             alt={testimonial.name}
                             fill
                             className="object-cover"
@@ -147,11 +154,15 @@ export default function TestimonialSection() {
               ))}
             </div>
           </div>
+
+          {/* Dots */}
           <div className="mt-8 flex justify-center space-x-2">
             {testimonials.map((_, index) => (
               <button
                 key={index}
-                className={`h-2 w-2 rounded-full ${currentTestimonial === index ? "bg-primary-500" : "bg-gray-300"}`}
+                className={`h-2 w-2 rounded-full transition-colors ${
+                  currentTestimonial === index ? "bg-primary-500" : "bg-gray-300"
+                }`}
                 onClick={() => setCurrentTestimonial(index)}
                 aria-label={`Go to testimonial ${index + 1}`}
               />

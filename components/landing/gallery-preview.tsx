@@ -33,38 +33,38 @@ export default function GalleryPreview() {
 
   const images = [
     {
-      src: "/placeholder.svg?height=400&width=600",
+      src: "/a1.jpg",
       alt: "Campus Building",
       category: "Campus",
     },
     {
-      src: "/placeholder.svg?height=400&width=600",
+      src: "/a1.jpg",
       alt: "Science Lab",
       category: "Facilities",
     },
     {
-      src: "/placeholder.svg?height=400&width=600",
+      src: "/a1.jpg",
       alt: "Classroom",
       category: "Academics",
     },
     {
-      src: "/placeholder.svg?height=400&width=600",
+      src: "/a1.jpg",
       alt: "Sports Event",
       category: "Events",
     },
     {
-      src: "/placeholder.svg?height=400&width=600",
+      src: "/a1.jpg",
       alt: "Library",
       category: "Facilities",
     },
     {
-      src: "/placeholder.svg?height=400&width=600",
+      src: "/a1.jpg",
       alt: "Cultural Program",
       category: "Events",
     },
   ]
 
-  // Adjust the number of visible images based on screen size
+
   const getVisibleCount = () => {
     if (typeof window !== "undefined") {
       if (window.innerWidth < 640) return 1 // Mobile
@@ -147,7 +147,7 @@ export default function GalleryPreview() {
                   >
                     <div className="group relative aspect-video overflow-hidden rounded-lg shadow-md">
                       <Image
-                        src={image.src || "/placeholder.svg"}
+                        src={image.src || "/a1.jpg"}
                         alt={image.alt}
                         fill
                         className="object-cover transition-transform duration-500 group-hover:scale-110"

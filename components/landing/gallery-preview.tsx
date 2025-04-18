@@ -94,7 +94,7 @@ export default function GalleryPreview() {
   }
 
   return (
-    <section id="gallery-preview" className="section-padding bg-gray-50">
+    <section id="gallery-preview" className="section-padding bg-gray-50 ">
       <div className="container-wrapper" ref={ref}>
         <motion.div
           className="flex flex-col items-center justify-center space-y-4 text-center"

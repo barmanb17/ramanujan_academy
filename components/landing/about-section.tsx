@@ -13,9 +13,9 @@ export default function AboutSection() {
   const isInView = useInView(ref, { once: true, amount: 0.3 })
 
   const images = [
+    "/n1.jpg",
     "/a1.jpg",
-    "/a1.jpg",
-    "/a1.jpg",
+    "/n2.jpg",
   ]
 
   const nextSlide = () => {
@@ -72,7 +72,7 @@ export default function AboutSection() {
               Our Mission & Vision
             </motion.h2>
             <motion.p variants={itemVariants} className="text-gray-600 md:text-xl/relaxed">
-              Reamanujan Academy was founded with a vision to provide quality education that empowers students to
+              Ramanujan Academy was founded with a vision to provide quality education that empowers students to
               achieve their academic goals and build a strong foundation for their future.
             </motion.p>
             <motion.p variants={itemVariants} className="text-gray-600">
@@ -86,7 +86,8 @@ export default function AboutSection() {
             </motion.p>
           </motion.div>
           <motion.div
-            className="relative mx-auto aspect-video overflow-hidden rounded-xl"
+           className="relative mx-auto aspect-video overflow-hidden rounded-xl lg:min-h-[300px] w-auto "
+
             initial={{ opacity: 0, scale: 0.95 }}
             animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
             transition={{ duration: 0.5, delay: 0.2 }}
@@ -102,7 +103,7 @@ export default function AboutSection() {
                   >
                     
                     <Image
-                      src={src || "/a1.jpg"}
+                      src={src || "public/a1.jpg"}
                       alt={`Campus image ${index + 1}`}
                       fill
                       className="object-cover"

@@ -36,53 +36,60 @@ export default function HeroSection() {
   return (
     <section
       className="w-full py-20 md:py-28 lg:py-36 xl:py-40 relative h-screen overflow-hidden bg-cover bg-center"
-      style={{ backgroundImage: "url('/h1.jpg')" }}
+      style={{ backgroundImage: "url('/h11.jpg')" }}
     >
       {/* Optional dark overlay for readability */}
       <div className="absolute inset-0 z-0 bg-black/10" />
 
-      <div className="container-wrapper relative z-10 mt-10 sm:mt-20 sm:flex sm:justify-center sm:items-center">
-        <motion.div
-          className="flex flex-col items-center justify-start sm:justify-center space-y-6 text-center"
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-        >
-          <motion.div variants={itemVariants} className="space-y-2 mt-10 gap-5">
-            <h1 className="text-4xl font-bold mb-10 tracking-tighter text-white sm:text-6xl md:text-6xl lg:text-7xl/none">
-              Welcome to <span className="text-gradient">Ramanujan Academy</span>
-            </h1>
-            <motion.p
-              variants={itemVariants}
-              className="mx-auto max-w-[700px] text-gray-200 md:text-xl"
-            >
-              Empowering students to achieve academic excellence through quality education and personalized guidance
-            </motion.p>
-          </motion.div>
-          <motion.div
-            variants={itemVariants}
-            className="flex flex-col sm:flex-row gap-4 min-[400px]:gap-6"
+      <div className="container relative mt-16 z-10 mx-auto flex h-full gap-6 flex-col items-center justify-center px-4 text-center text-[400px]  text-white">
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="mb-4 text-5xl font-bold tracking-tight sm:text-6xl md:text-7xl"
           >
-            <Button asChild size="lg" className="bg-primary-600 hover:bg-primary-700">
+            Welcome to <span className="text-gradient">Ramanujan Academy</span>
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="mb-8 max-w-2xl text-lg sm:text-xl"
+          >
+            Empowering students to achieve academic excellence through quality education and personalized guidance
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="flex flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0"
+          >
+            <Button
+              size="lg"
+              className="bg-primary-600 hover:bg-primary-700"
+              asChild
+            >
               <Link href="/courses">
-                Explore Courses
-                <ArrowRight className="ml-2 h-4 w-4" />
+              Explore Courses
+              <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
+              
             </Button>
             <Button
-              asChild
               size="lg"
               variant="outline"
-              className="border-primary-500 text-primary-500 hover:bg-primary-50"
+              className="bg-transparent text-white border-white hover:bg-white/10"
+              asChild
             >
-              <Link href="/admission">
-                Join Now
-                <ArrowRight className="ml-2 h-4 w-4" />
+              <Link href="/admission" className="bg-primary-600 hover:bg-primary-700">
+              Join Now
+              <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
           </motion.div>
-        </motion.div>
-      </div>
+        </div>
 
       {/* Animated background bubbles (optional visual) */}
       {/* {mounted && (

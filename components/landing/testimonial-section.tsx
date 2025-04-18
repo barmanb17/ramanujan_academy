@@ -77,7 +77,10 @@ export default function TestimonialSection() {
 
   return (
     <section id="testimonials" className="overflow-hidden bg-white py-16">
-      <div ref={ref} className="mx-auto w-full max-w-7xl px-4 sm:px-4 lg:px-8">
+      <div
+        ref={ref}
+        className="mx-auto w-full max-w-7xl px-4 sm:px-4 lg:px-8 overflow-hidden box-border"
+      >
         {/* Heading */}
         <motion.div
           className="flex flex-col items-center justify-center space-y-4 text-center"
@@ -96,7 +99,7 @@ export default function TestimonialSection() {
           </motion.h2>
           <motion.p
             variants={itemVariants}
-            className="max-w-[400px] text-gray-600 sm:px-4 md:text-xl/relaxed"
+            className="max-w-[400px] text-gray-600 sm:px-4 md:text-xl text-sm"
           >
             Hear from our students who achieved their academic goals with us
           </motion.p>
@@ -111,19 +114,19 @@ export default function TestimonialSection() {
         >
           <div className="relative w-full overflow-hidden">
             <div
-              className="flex w-full transition-transform duration-500 ease-in-out"
+              className="flex transition-transform duration-500 ease-in-out"
               style={{
-                transform: `translateX(-${currentTestimonial * 100}%)`,
+                transform: `translateX(-${currentTestimonial * (100 / testimonials.length)}%)`,
                 width: `${testimonials.length * 100}%`,
               }}
             >
               {testimonials.map((testimonial) => (
                 <div
                   key={testimonial.id}
-                  className="w-full flex-shrink-0 px-2 sm:px-4"
+                  className="min-w-0 box-border w-full flex-shrink-0"
                   style={{ width: `${100 / testimonials.length}%` }}
                 >
-                  <Card className="h-full overflow-hidden border-none shadow-lg">
+                  <Card className="h-full overflow-hidden border-none shadow-lg mx-auto max-w-xl">
                     <CardContent className="p-6 sm:p-8">
                       <div className="mb-6 flex justify-center">
                         <Quote className="h-12 w-12 text-primary-700" />

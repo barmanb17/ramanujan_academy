@@ -6,7 +6,6 @@ import { ArrowRight } from "lucide-react"
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 
-
 export default function HeroSection() {
   const [mounted, setMounted] = useState(false)
 
@@ -40,27 +39,30 @@ export default function HeroSection() {
       style={{ backgroundImage: "url('/h1.jpg')" }}
     >
       {/* Optional dark overlay for readability */}
-      <div className="absolute inset-0  z-0 bg-black/20" />
+      <div className="absolute inset-0 z-0 bg-black/10" />
 
-      <div className="container-wrapper relative z-10 mt-10">
+      <div className="container-wrapper relative z-10 mt-10 sm:mt-20">
         <motion.div
-          className="flex flex-col items-center justify-center space-y-6 text-center"
+          className="flex flex-col items-center justify-start sm:justify-center space-y-6 text-center"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
         >
           <motion.div variants={itemVariants} className="space-y-2 mt-10 gap-5">
-            <h1 className="text-4xl font-bold mb-10 tracking-tighter text-white sm:text-6xl  md:text-6xl lg:text-7xl/none">
+            <h1 className="text-4xl font-bold mb-10 tracking-tighter text-white sm:text-6xl md:text-6xl lg:text-7xl/none">
               Welcome to <span className="text-gradient">Ramanujan Academy</span>
             </h1>
             <motion.p
               variants={itemVariants}
-              className="mx-auto  max-w-[700px] text-gray-200 md:text-xl"
+              className="mx-auto max-w-[700px] text-gray-200 md:text-xl"
             >
               Empowering students to achieve academic excellence through quality education and personalized guidance
             </motion.p>
           </motion.div>
-          <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 min-[400px]:gap-6">
+          <motion.div
+            variants={itemVariants}
+            className="flex flex-col sm:flex-row gap-4 min-[400px]:gap-6"
+          >
             <Button asChild size="lg" className="bg-primary-600 hover:bg-primary-700">
               <Link href="/courses">
                 Explore Courses
@@ -82,7 +84,7 @@ export default function HeroSection() {
         </motion.div>
       </div>
 
-      {/* Animated background bubbles */}
+      {/* Animated background bubbles (optional visual) */}
       {/* {mounted && (
         <div className="absolute inset-0 z-0 bg-grid">
           <div className="absolute inset-0">

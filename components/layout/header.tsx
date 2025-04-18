@@ -7,6 +7,12 @@ import { Menu, X } from "lucide-react"
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
 
 const navItems = [
   { name: "Home", href: "/" },
@@ -25,23 +31,20 @@ export default function Header() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10)
     }
-
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen)
-  }
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
 
   return (
     <header
       className={cn(
-        " fixed top-0 z-50 w-full transition-all duration-300 ",
-        isScrolled ? "bg-white shadow-md py-2" : "bg-white py-4",
+        "fixed top-0 z-50 w-full transition-all duration-300 lg:px-20",
+        isScrolled ? "bg-white shadow-md py-2" : "bg-white py-4"
       )}
     >
-      <div className="container-wrapper max-w-7xl">
+      <div className="max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center space-x-2">
             <div className="relative h-10 w-10">
@@ -52,7 +55,9 @@ export default function Header() {
                 className="object-contain"
               />
             </div>
-            <span className="text-xl font-bold text-primary-600 hidden lg:block">Ramanujan Academy</span>
+            <span className="text-xl font-bold text-primary-600 hidden lg:block">
+              Ramanujan Academy
+            </span>
           </Link>
 
           <nav className="hidden md:flex md:items-center md:space-x-1 lg:space-x-2">
@@ -73,28 +78,40 @@ export default function Header() {
           </nav>
 
           <div className="hidden md:flex md:items-center md:space-x-4">
-            <Button
-              asChild
-              variant="outline"
-              size="sm"
-              className="border-primary-500 text-primary-500 hover:bg-primary-50"
-            >
-              <Link href="/login/student">Student Login</Link>
-            </Button>
-            <Button asChild size="sm" className="bg-primary-500 hover:bg-primary-600">
-              <Link href="/login/teacher">Teacher Login</Link>
-            </Button>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className=" px-12 py-5 border-white text-white hover:text-white bg-primary-600 hover:bg-primary-700"
+                >
+                  Login
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="w-48">
+                <DropdownMenuItem asChild>
+                  <Link href="/login/student">Login as Student</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link href="/login/teacher">Login as Teacher</Link>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
           </div>
 
           <div className="flex md:hidden">
-            <Button variant="ghost" size="icon" onClick={toggleMenu} aria-label="Toggle Menu">
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={toggleMenu}
+              aria-label="Toggle Menu"
+            >
               {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </Button>
           </div>
         </div>
       </div>
 
-      {/* Mobile menu */}
       {isMenuOpen && (
         <motion.div
           className="md:hidden"
@@ -114,23 +131,29 @@ export default function Header() {
                 {item.name}
               </Link>
             ))}
-            <div className="flex flex-col space-y-2 pt-4">
-              <Button
-                asChild
-                variant="outline"
-                size="sm"
-                className="border-primary-500 text-primary-500 hover:bg-primary-50"
-              >
-                <Link href="/login/student" onClick={() => setIsMenuOpen(false)}>
-                  Student Login
-                </Link>
-              </Button>
-              <Button asChild size="sm" className="bg-primary-500 hover:bg-primary-600">
-                <Link href="/login/teacher" onClick={() => setIsMenuOpen(false)}>
-                  Teacher Login
-                </Link>
-              </Button>
-            </div>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className=" text-primary-500 hover:bg-primary-50"
+                >
+                  Login
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-48">
+                <DropdownMenuItem asChild>
+                  <Link href="/login/student" onClick={() => setIsMenuOpen(false)}>
+                    Login as Student
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link href="/login/teacher" onClick={() => setIsMenuOpen(false)}>
+                    Login as Teacher
+                  </Link>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
           </div>
         </motion.div>
       )}

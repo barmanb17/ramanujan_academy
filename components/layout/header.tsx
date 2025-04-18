@@ -55,9 +55,14 @@ export default function Header() {
                 className="object-contain"
               />
             </div>
+            <div className="flex flex-col">
             <span className="text-xl font-bold text-primary-700 hidden lg:block">
               Ramanujan Academy
             </span>
+            <span className="text-[0.7rem] font-light text-gray-500 ">
+              North Barpeta Road, Assam 781315
+            </span>
+            </div>
           </Link>
 
           <nav className="hidden md:flex md:items-center md:space-x-1 lg:space-x-2">

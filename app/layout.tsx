@@ -10,12 +10,12 @@ const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | Reamanujan Academy",
+    template: "Ramanujan Academy",
     default: "Reamanujan Academy - Excellence in Education",
   },
   description: "Empowering students to achieve academic excellence through quality education and personalized guidance",
   keywords: "education, academy, coaching, JEE, NEET, board exams, Barpeta Road, Assam",
-    generator: 'v0.dev'
+    generator: 'engagenow.tech'
 }
 
 export default function RootLayout({
@@ -26,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/rlogo.jpg" className="rounded-xl"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta property="og:title" content="Reamanujan Academy - Excellence in Education" />
         <meta
